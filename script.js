@@ -42,12 +42,32 @@ const statsObserver = new IntersectionObserver((entries) => {
 statNums.forEach(el => statsObserver.observe(el));
 
 // --- FORM SUBMIT ---
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Message envoyé ✓';
-  btn.style.background = '#10b981';
-  btn.disabled = true;
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(contactForm);
+      const res  = await fetch('contact.php', { method: 'POST', body: data });
+      const json = await res.json();
+
+      if (json.success) {
+        btn.textContent = 'Message envoyé ✓';
+        btn.style.background = '#10b981';
+        contactForm.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Erreur — réessayez';
+      btn.style.background = '#e8384a';
+      btn.disabled = false;
+    }
+  });
 }
 
 // --- NAV ACTIVE ON SCROLL ---
