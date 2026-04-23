@@ -167,18 +167,18 @@
   </section>
 
   <!-- INDICATEURS -->
-  <section class="features">
+<section class="features">
     <div class="section-tag">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      Quatre indicateurs
+      Indicateurs clés
     </div>
-    <h2 class="section-title">Chaque indicateur seul est utile.<br>Ensemble, ils sont prédictifs.</h2>
+    <h2 class="section-title">Vos données croisées automatiquement.<br>Un seul endroit. Zéro effort.</h2>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon feature-icon--red">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
-        <h3>Distance & ACWR</h3>
+        <h3>Charge & ACWR</h3>
         <p>Le ratio charge aiguë / charge chronique. Détecte la surcharge avant la blessure.</p>
         <div class="feature-zones">
           <span class="zone zone--vert">Zone optimale</span>
@@ -190,24 +190,27 @@
         <div class="feature-icon feature-icon--orange">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <h3>Vmax</h3>
-        <p>Suivi de la vitesse maximale session par session. Une chute de Vmax = signal de fatigue profonde.</p>
+        <h3>Vitesse maximale</h3>
+        <p>Suivi de la Vmax session par session. Une chute = signal de fatigue neuromusculaire profonde.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon feature-icon--blue">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         </div>
-        <h3>Accél / Décél</h3>
-        <p>L'intensité invisible. Deux athlètes peuvent faire 8km avec des profils d'intensité radicalement différents.</p>
+        <h3>Intensité de séance</h3>
+        <p>L'intensité invisible. Deux athlètes peuvent couvrir la même distance avec des profils de charge radicalement différents.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon feature-icon--green">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
-        <h3>État de forme</h3>
-        <p>Sommeil, fraîcheur, humeur, énergie. Rempli par l'athlète, croisé avec les données GPS.</p>
+        <h3>État de forme subjectif</h3>
+        <p>Sommeil, fraîcheur, humeur, énergie. Rempli par l'athlète en 30 secondes, croisé avec les données GPS.</p>
       </div>
     </div>
+    <p style="text-align:center; margin-top: 2rem; color: var(--text-sub); font-size: 14px; font-family: var(--font-label); letter-spacing: .04em;">
+      + D'autres métriques disponibles selon votre sport et votre matériel GPS.
+    </p>
   </section>
 
   <!-- SPORTS -->
@@ -267,8 +270,8 @@
           <div class="origin-label">semaines</div>
         </div>
         <div class="origin-stat">
-          <div class="origin-number">1</div>
-          <div class="origin-label">club convaincu</div>
+          <div class="origin-number">2</div>
+          <div class="origin-label">clubs convaincus</div>
         </div>
       </div>
     </div>
@@ -282,13 +285,13 @@
     </div>
     <h2 class="section-title">Votre club mérite mieux qu'un Excel.</h2>
     <p class="contact-description">Vous êtes un club, un staff, un préparateur physique ? On veut vous parler.</p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" id="contact-form">
       <div class="form-row">
-        <input type="text" placeholder="Votre nom" required>
-        <input type="text" placeholder="Votre club / organisation" required>
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="text" name="club" placeholder="Votre club / organisation" required>
       </div>
-      <input type="email" placeholder="Votre email" required>
-      <textarea placeholder="Votre message (sport, nombre d'athlètes, besoins...)" rows="4"></textarea>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <textarea name="message" placeholder="Votre message (sport, nombre d'athlètes, besoins...)" rows="4"></textarea>
       <button type="submit" class="btn-primary btn-primary--full">Envoyer</button>
     </form>
   </section>
@@ -297,9 +300,14 @@
   <footer class="footer">
     <div class="footer-logo"><img src="logo.png" alt="Pitch" height="72"></div>
     <div class="footer-tagline">Suivi de charge sportif — Pour tous les clubs, tous les sports.</div>
+    <a href="https://www.instagram.com/pitch.sport/" target="_blank" class="footer-instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Suivez l'aventure sur Instagram
+    </a>
     <div class="footer-copy">© 2026 Pitch</div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
