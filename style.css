@@ -157,13 +157,13 @@ body {
 }
 
 .nav-logo img {
-  height: 52px;
+  height: 72px;
   display: block;
 }
 
 @media (max-width: 600px) {
   .nav { padding: 12px 16px; }
-  .nav-logo img { height: 40px; }
+  .nav-logo img { height: 52px; }
 }
 
 
@@ -413,7 +413,7 @@ body {
 
 
 /* ============================================================
-   PROBLÈME
+   PROBLÃˆME
    ============================================================ */
 
 .problem {
@@ -797,7 +797,67 @@ body {
   margin-bottom: 20px;
 }
 
+.footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-family: var(--font-label);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.footer-instagram:hover { color: var(--red); }
+
 .footer-copy {
   font-size: 12px;
   color: var(--text-dim);
+}
+
+/* â”€â”€ TÃ‰MOIGNAGE â”€â”€ */
+.testimonial {
+  padding: var(--section-pad);
+  background: var(--bg);
+}
+
+.testimonial-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.testimonial-quote {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: var(--radius);
+  padding: 48px;
+  position: relative;
+}
+
+.testimonial-quote p {
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.testimonial-name {
+  font-family: var(--font-label);
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text);
+}
+
+.testimonial-role {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
 }
